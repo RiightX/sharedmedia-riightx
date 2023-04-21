@@ -1,5 +1,10 @@
-## Interface: 100000
+## Interface: 100007
 ## Title: SharedMedia |cffcc8800<Riight>|r
+## Notes: Shares some media :).
+## Author: RiightX
+## Version: 0.0.1
+
+## X-Curse-Project-ID: 852897
 
 libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
