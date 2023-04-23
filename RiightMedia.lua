@@ -31,3 +31,4 @@ LSM:Register("sound", "|cffcc8800CC - Riight|r", [[Interface\Addons\SharedMedia_
 LSM:Register("sound", "|cffcc8800Jump - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - Jump.ogg]])
 LSM:Register("sound", "|cffcc8800In - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - In.ogg]])
 LSM:Register("sound", "|cffcc8800Out - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - Out.ogg]])
+LSM:Register("sound", "|cffcc8800Personal - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - Personal.ogg]])
