@@ -1,8 +1,8 @@
-## Interface: 100007
+## Interface: 100200
 ## Title: SharedMedia |cffcc8800<Riight>|r
 ## Notes: Shares some media :).
 ## Author: RiightX
-## Version: 0.0.4
+## Version: 0.0.5
 
 ## X-Curse-Project-ID: 852897
 
