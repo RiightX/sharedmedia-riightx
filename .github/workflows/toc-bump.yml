@@ -1,12 +1,9 @@
 name: Create releae on TOC Bump
 
 on:
-  workflow_dispatch:
-    inputs:
-      message:
-        description: 'Commit message'
-        required: false
-        default: 'TOC Bump'
+  push:
+    paths:
+      - '**toc-bump.txt'
 
 jobs:
   build:
@@ -19,11 +16,12 @@ jobs:
           fetch-depth: 0
 
       - name: Get next version
-        uses: reecetech/version-increment@2023.9.3
+        uses: reecetech/version-increment@2023.10.1
         id: version
         with:
           scheme: semver
           increment: patch
+          use_api: true
 
       - name: Release snapshot
         id: release-snapshot
