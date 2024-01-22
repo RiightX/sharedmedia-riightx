@@ -6,8 +6,7 @@ on:
       - main
     tags:
       - 'v*'
-      - '!**-classic'
-      - '!**-rc**'
+      - "!**-rc**"
       - "!**-alpha**"
       - "!**-beta**"
     paths-ignore:
