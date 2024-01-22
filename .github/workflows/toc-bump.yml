@@ -1,4 +1,5 @@
-name: TOC Bump
+name: Create releae on TOC Bump
+
 on:
   workflow_dispatch:
     inputs:
@@ -12,7 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout addon
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Get next version
         uses: reecetech/version-increment@2023.9.3
@@ -21,17 +25,13 @@ jobs:
           scheme: semver
           increment: patch
 
-      - name: Create & push empty commit
-        run: |
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git config --global user.name "${{ github.actor }}"
-          git commit --allow-empty -m "${{ github.event.inputs.message }}"
-          git push
-
-      - name: Publish release
-        uses: softprops/action-gh-release@v1
+      - name: Release snapshot
+        id: release-snapshot
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # this cannot be ${{ secrets.GITHUB_TOKEN }} because that'll block the on release publish workflow from running
-          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          name: ${{ steps.version.outputs.v-version }}
           tag_name: ${{ steps.version.outputs.v-version }}
+          release_name: ${{ steps.version.outputs.v-version }}
+          draft: false
+          prerelease: false
