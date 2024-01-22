@@ -23,13 +23,13 @@ jobs:
           increment: patch
           use_api: true
 
-      - name: Release snapshot
-        id: release-snapshot
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create tag
+        uses: actions/github-script@v5
         with:
-          tag_name: ${{ steps.version.outputs.v-version }}
-          release_name: ${{ steps.version.outputs.v-version }}
-          draft: false
-          prerelease: false
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{ steps.version.outputs.v-version }}',
+              sha: context.sha
+            })
