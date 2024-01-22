@@ -23,7 +23,6 @@ local MediaType_STATUSBAR = LSM.MediaType.STATUSBAR
 -- -----
 LSM:Register("sound", "|cffcc8800Heal - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - Heal.ogg]])
 LSM:Register("sound", "|cffcc8800Frontal - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - Frontal.ogg]])
-LSM:Register("sound", "|cffcc8800Sexy Worms - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - Sexy Worms.ogg]])
 LSM:Register("sound", "|cffcc8800AHH OHH - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - AHH OHH.ogg]])
 LSM:Register("sound", "|cffcc8800AAAHHHHHH - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - AAAHHHHHH.ogg]])
 LSM:Register("sound", "|cffcc8800CC - Riight|r", [[Interface\Addons\SharedMedia_Riight\sound\Riight - CC.ogg]])
