@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - '*'
+      - 'v*'
       - '!**-classic'
       - '!**-rc**'
       - "!**-alpha**"
@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout addon
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
