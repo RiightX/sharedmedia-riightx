@@ -23,13 +23,9 @@ jobs:
           increment: patch
           use_api: true
 
-      - name: Create tag
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: 'refs/tags/${{ steps.version.outputs.v-version }}',
-              sha: context.sha
-            })
+      - name: Create git tag
+        run: |
+          git tag ${{ steps.version.outputs.v-version }}
+
+      - name: Push git tag
+        run: git push origin ${{ steps.version.outputs.v-version }}
