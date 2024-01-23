@@ -17,6 +17,7 @@ local MediaType_STATUSBAR = LSM.MediaType.STATUSBAR
 -- -----
 --   FONT
 -- -----
+LSM:Register(MediaType_FONT, "DorisPP",                     [[Interface\Addons\SharedMedia\fonts\doris_pp\DorisPP.ttf]])
 
 -- -----
 --   SOUND
