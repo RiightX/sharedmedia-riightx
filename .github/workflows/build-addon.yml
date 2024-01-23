@@ -1,5 +1,9 @@
+# description of this workflow, can be anything you want
 name: Package addon
 
+# we need to let GitHub know _when_ we want to release, typically only when we create a new tag.
+# this will target tags as official releases, and all pushes to the master branch as alphas.
+# this part can be heavily customized to your liking, like targeting only tags that match a certain word, other branches or even pull requests.
 on:
   push:
     branches:
@@ -14,23 +18,30 @@ on:
       - '**/README.md'
   workflow_dispatch:
 
+# a workflow is built as jobs, and within these jobs are steps
 jobs:
-  build:
+
+  # "release" is a job, you can name it anything you want
+  release:
+
+      # we can run our steps on pretty much anything, but the "ubuntu-latest" image is a safe bet
     runs-on: ubuntu-latest
 
+    # "steps" holds a list of all the steps needed to package and release our AddOn
     steps:
+
+      # first, clone the whole repository, which is required
       - name: Checkout addon
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          submodules: recursive
+          fetch-depth: 0 # gets entire git history, needed for automatic changelogs
 
-#      - name: Run luacheck
-#        uses: BigWigsMods/actions/luacheck@master
-#        with:
-#          args: -q
-
+      # once cloned, we can run the GitHub Action for the packager project
       - name: Package
         uses: BigWigsMods/packager@v2
+
+        # specify the environment variables used by the packager, matching the secrets from the project on GitHub
         env:
-          CF_API_KEY: ${{ secrets.CF_API_KEY }}
-          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+          CF_API_KEY: ${{ secrets.CF_API_KEY }} # allows pushing to CurseForge
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }} # allows creating GitHub releases
