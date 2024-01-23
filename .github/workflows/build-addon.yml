@@ -1,7 +1,7 @@
 name: Package addon
 
 on:
-  create:
+  push:
     tags:
       - 'v*'
       - "!**-rc**"
