@@ -2,7 +2,7 @@
 ## Title: SharedMedia |cffcc8800<Riight>|r
 ## Notes: Shares some media :).
 ## Author: RiightX
-## Version: 0.1.0
+## Version: 0.2.0
 
 ## X-Curse-Project-ID: 852897
 
