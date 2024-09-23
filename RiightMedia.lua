@@ -38,3 +38,9 @@ LSM:Register("sound", "|cffcc8800In - Riight|r",            [[Interface\Addons\S
 LSM:Register("sound", "|cffcc8800Out - Riight|r",           [[Interface\Addons\SharedMedia_Riight\sound\Riight - Out.ogg]])
 LSM:Register("sound", "|cffcc8800Personal - Riight|r",      [[Interface\Addons\SharedMedia_Riight\sound\Riight - Personal.ogg]])
 LSM:Register("sound", "|cffcc8800Wee - Riight|r",           [[Interface\Addons\SharedMedia_Riight\sound\Riight - Wee.ogg]])
+
+-- -----
+-- TEXTURE
+-- -----
+LSM:Register("statusbar", "|cffcc8800Plain - Riight|r", [[Interface\Addons\SharedMedia_Riight\images\plain.tga]])
+LSM:Register("statusbar", "|cffcc8800Plain White - Riight|r", [[Interface\Addons\SharedMedia_Riight\images\plain_white.tga]])
