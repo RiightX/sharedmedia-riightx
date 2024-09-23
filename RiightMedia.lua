@@ -1,3 +1,4 @@
+riight_LibNickTag = LibStub("NickTag-1.0");
 
 local LSM = LibStub("LibSharedMedia-3.0")
 
